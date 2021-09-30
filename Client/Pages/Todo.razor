@@ -1,0 +1,51 @@
+﻿<!-- Labels relative URL /todo -->
+@page "/todo"
+
+<!-- Page title "Todo" with unchecked number of items in parenthesis -->
+<h1>Todo (@todos.Count(todo => !todo.IsDone))</h1>
+
+<!-- Starts unordered list -->
+<ul>
+    <!-- Loops through items in the todo list -->
+    @foreach (var todo in todos)
+    {
+        <!-- each item in the list -->
+        <li>
+            <!-- Creates checkbox to know if item is done  -->
+            <input type="checkbox" @bind="todo.IsDone" />
+            <!-- Shows text box with title -->
+            <input @bind="todo.Title" />
+        </li>
+    }
+
+    <!-- Ends unordered list -->
+</ul>
+
+<!-- Input text box with placeholder -->
+<input placeholder="Something todo" @bind="newTodo" />
+<!-- Button to add written item to list  -->
+<button @onclick="AddTodo">Add</button>
+
+<!-- Block containing code -->
+@code {
+
+    // Initializes list of items using the class "TodoItem"
+    private List<TodoItem> todos = new();
+
+    // Declares string
+    private string newTodo;
+
+    // Function AddTodo()
+    private void AddTodo()
+    {
+    // If text entered is not empty
+    if (!string.IsNullOrWhiteSpace(newTodo))
+    {
+    // new list item is added
+    todos.Add(new TodoItem { Title = newTodo });
+
+    // Setting up for next input by emptying string
+    newTodo = string.Empty;
+    }
+    }
+    }
