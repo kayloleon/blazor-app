@@ -1,6 +1,6 @@
 # Blazor Application
 
-Web application consisting practice applications like a counter, weather app, and to do list. I created this website following the instructions of professor Vanselow and Microsoft tutorials provided below. This was made as an introduction to web design as well as a series of assignments for school.
+Web application consisting of practice applications like a counter, weather app, and a to do list. I created this website following the instructions of professor Vanselow and Microsoft tutorials provided below. This was made as an introduction to web design as well as a series of assignments for school.
 
 # Demonstration
 
